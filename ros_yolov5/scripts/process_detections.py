@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/home/scarlet/miniconda3/envs/venv/bin/python
 
 import rospy
 import json
@@ -13,20 +13,7 @@ class process_detections:
 		self.people_counter_pub = rospy.Publisher('/object_detection/people_counter', String, queue_size=1)
 		self.isFood_pub = rospy.Publisher('/object_detection/isFood', Bool, queue_size=1)
 
-		self.objs =['beer',
-					'cocacola',
-					'plastic_cup',
-					'bifrutas_tropical_can',
-					'biscuits_pack',
-					'sprite',
-					'pringles1',
-					'pringles2',
-					'peroni',
-					'tea_box',
-					'estathe',
-					'cup',
-					'wine',
-					'bottle']
+		self.objs =['people']
 
 	def process_detections_callback(self, data):
 
