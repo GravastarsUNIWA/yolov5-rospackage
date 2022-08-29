@@ -41,7 +41,10 @@ class ObjectDetector:
     
         # Hack for getting image from image message without cvbridge
         img = np.frombuffer(msg.data, dtype=np.uint8)
-        img = img.reshape((msg.height, msg.width, 3)) 
+        img = img.reshape((msg.height, msg.width, 3))
+        # Kinect color minor issue. Transforming BGR -> RGB
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) 
+
         
         results = self.model(img, size=640)
 

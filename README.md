@@ -82,7 +82,7 @@ AttributeError: 'Upsample' object has no attribute 'recompute_scale_factor'
 ```
 This error is from the internal code of pytorch. The "forward" function is not working properly.
 
-To fix this, replace in ```./lib/python3.8/site-packages/torch/nn/modules/upsampling.py```:
+To fix this, replace in ```miniconda3/envs/venv/lib/python3.8/site-packages/torch/nn/modules/upsampling.py```:
 
 ```
 def forward(self, input: Tensor) -> Tensor:
